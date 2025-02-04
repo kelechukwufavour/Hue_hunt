@@ -18,17 +18,28 @@ const resetButton = document.getElementById("reset-btn");
 const levelSelect = document.getElementById("level");
 const timerDisplay = document.getElementById("timer");
 
-// Start a new round with a timer
+// Start the game
+function startGame() {
+    score = 0;
+    timeLeft = 10;
+    scoreDisplay.textContent = `Score: ${score}`;
+    startNewRound();
+
+    clearInterval(timerInterval);
+    timerInterval = setInterval(updateTimer, 1000);
+}
+
+// Start a new round WITHOUT resetting the timer
 function startNewRound() {
     colors = difficultyLevels[levelSelect.value];
     targetColor = colors[Math.floor(Math.random() * colors.length)];
-    
+
     // Reset UI
     targetBox.style.backgroundColor = "transparent";
     message.textContent = "Guess the correct color!";
     colorOptions.innerHTML = "";
 
-    // Generate color options
+    // Generate color buttons
     colors.forEach(color => {
         const button = document.createElement("button");
         button.classList.add("color-button");
@@ -36,12 +47,6 @@ function startNewRound() {
         button.onclick = () => checkColor(color);
         colorOptions.appendChild(button);
     });
-
-    // Reset timer
-    clearInterval(timerInterval);
-    timeLeft = 10;
-    timerDisplay.textContent = `Time Left: ${timeLeft}s`;
-    timerInterval = setInterval(updateTimer, 1000);
 }
 
 // Check the guessed color
@@ -50,12 +55,13 @@ function checkColor(color) {
         message.textContent = "✅ Correct!";
         score++;
         targetBox.style.backgroundColor = targetColor;
-        clearInterval(timerInterval); // Stop the timer
-        setTimeout(startNewRound, 1000); // Start a new round after 1s
+        scoreDisplay.textContent = `Score: ${score}`;
+
+        // Start a new round but keep the timer running
+        setTimeout(startNewRound, 1000);
     } else {
         message.textContent = "❌ Wrong! Try again.";
     }
-    scoreDisplay.textContent = `Score: ${score}`;
 }
 
 // Timer countdown
@@ -65,14 +71,23 @@ function updateTimer() {
         timerDisplay.textContent = `Time Left: ${timeLeft}s`;
     } else {
         clearInterval(timerInterval);
-        message.textContent = "⏳ Time's up! Try again.";
-        targetBox.style.backgroundColor = targetColor;
+        targetBox.style.backgroundColor = targetColor; // Reveal target color
+
+        // Display message based on score
+        if (score === 0) {
+            message.textContent = `😞 Oops, try again!`;
+        } else {
+            message.textContent = `🎉 Well done! Your score is ${score}`;
+        }
+        
+        // Restart game after 3 seconds
+        setTimeout(startGame, 3000);
     }
 }
 
 // Event Listeners
-resetButton.addEventListener("click", startNewRound);
-levelSelect.addEventListener("change", startNewRound);
+resetButton.addEventListener("click", startGame);
+levelSelect.addEventListener("change", startGame);
 
 // Initialize game
-startNewRound();
+startGame();
