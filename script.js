@@ -1,13 +1,13 @@
 const difficultyLevels = {
-    easy: ["red", "blue", "green"],
-    medium: ["red", "blue", "green", "yellow", "purple"],
-    hard: ["red", "blue", "green", "yellow", "purple", "orange", "pink"]
+    easy: ["red", "blue", "green", "yellow", "purple", "pink"],
+    medium: ["red", "blue", "green", "yellow", "purple", "pink", "orange", "black"],
+    hard: ["red", "blue", "green", "yellow", "purple", "orange", "pink", "black", "brown", "white"]
 };
 
 let colors = [];
 let targetColor = "";
 let score = 0;
-let timeLeft = 10;
+let timeLeft = 10;""
 let timerInterval;
 
 const targetBox = document.getElementById("target-box");
