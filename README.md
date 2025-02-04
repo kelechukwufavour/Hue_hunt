@@ -6,7 +6,7 @@ This is my **Stage 1 Frontend Task** for the **HNG 12 Internship** .
 The goal of this game is simple: **Guess the correct color!**  
 
 ## 🚀 Live Demo
-🔗 [Click here to play](your-live-link-here)  
+🔗 [Click here to play](https://hue-hunt-7yj5fwppi-favour-kelechukwus-projects.vercel.app)  
 
 ## 🏆 Task Overview  
 This project fulfills the **HNG 12 Stage 1 Frontend Intern Task** by implementing a **color guessing game** using React and Tailwind CSS.  
