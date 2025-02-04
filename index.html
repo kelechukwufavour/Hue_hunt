@@ -1,13 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon1.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HUE HUNT</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUE HUNT - A Color Guessing Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="game-container">
+        <h1>Hue Hunt - Guess the Color</h1>
+        <div id="color-box"></div>
+        <p id="message">Guess the correct color!</p>
+        <div class="buttons" id="color-buttons"></div>
+        <p id="score">Score: 0</p>
+        <button id="new-game">New Game</button>
+    </div>
+    <script src="script.js"></script>
+
+    
+
+</body>
 </html>

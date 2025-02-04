@@ -22,9 +22,9 @@ This project fulfills the **HNG 12 Stage 1 Frontend Intern Task** by implementin
 ✔ Smooth **animations** for user interaction  
 
 ## 🛠️ Built With  
-- **React.js** ⚛️  
+- **HTML**
 - **Tailwind CSS** 🎨  
-- **JavaScript (ES6+)**  
+- **JavaScript**  
 
 ## 📜 How to Play  
 1️⃣ Look at the **target color box** at the top.  
