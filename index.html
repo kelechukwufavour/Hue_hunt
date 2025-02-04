@@ -4,21 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HUE HUNT - A Color Guessing Game</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="Assets/favicon1.ico">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     
     <div class="game-container">
         <h1>Hue Hunt - Guess the Color</h1>
-        <div id="color-box"></div>
-        <p id="message">Guess the correct color!</p>
-        <div class="buttons" id="color-buttons"></div>
-        <p id="score">Score: 0</p>
-        <button id="new-game">New Game</button>
+
+        <select id="level">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+        <p id="timer">Time Left: 10s</p>
+        
+
+    <!-- Target Color Box (Hidden Initially) -->
+    <div id="target-box"></div>
+    <p id="message">Guess the correct color!</p>
+
+     <!-- Color Options -->
+     <div id="colorOptions" class="color-grid"></div>
+
+     <p id="score">Score: 0</p>
+        <button id="reset-btn" onclick="resetGame()">New Game</button>
     </div>
-    <script src="script.js"></script>
 
-    
-
+        
+<script src="script.js"></script>
 </body>
 </html>
