@@ -39,3 +39,17 @@ git clone https://github.com/kelechukwufavour/Hue_hunt.git
 cd Hue_hunt
 npm install
 npm start
+
+# Upcoming Improvements
+ Add difficulty levels (Easy, Medium, Hard)
+ Implement a timer for each round
+ Enhance animations using Framer Motion
+# HNG 12 Internship Submission
+This project is my submission for Stage 1 of HNG 12 Internship.
+✅ Hosted on Vercel/Netlify (link above)
+✅ Meets all task requirements
+✅ Ready for testing and evaluation
+
+📜 License
+This project is open-source under the MIT License.
+
