@@ -13,7 +13,7 @@ This project fulfills the **HNG 12 Stage 1 Frontend Intern Task** by implementin
 
 ### ✅ Task Requirements Implemented:  
 ✔ Displays a random **target color**  
-✔ Shows **six color options** to choose from  
+✔ Shows **six color options** to choose from 
 ✔ Displays **game instructions**  
 ✔ Provides **feedback** (Correct/Wrong) after each guess  
 ✔ Keeps track of **score** dynamically  
@@ -27,10 +27,19 @@ This project fulfills the **HNG 12 Stage 1 Frontend Intern Task** by implementin
 - **JavaScript**  
 
 ## 📜 How to Play  
-1️⃣ Look at the **target color box** at the top.  
-2️⃣ Click on the **matching color option** from the 6 choices.  
-3️⃣ If correct, you gain **1 point**! Otherwise, try again.  
-4️⃣ Click the **New Game** button to start a fresh round.  
+How to Play:
+1️⃣ Look at the target color box at the top.
+2️⃣ Click on the matching color option from the available choices.
+3️⃣ If correct, you gain 1 point! Otherwise, try again.
+4️⃣ Keep playing until the timer reaches 0.
+5️⃣ At the end of the timer, your total score is displayed.
+6️⃣ Click the New Game button to start a fresh round.
+
+🎯 Difficulty Levels
+Easy: 6 colors (Red, Blue, Green)
+Medium: 8 colors (Red, Blue, Green, Yellow, Purple)
+Hard: 10 colors (Red, Blue, Green, Yellow, Purple, Orange, Pink)
+
 
 ## 🏗 Installation (Run Locally)  
 To play the game on your local machine:  
@@ -44,6 +53,7 @@ npm start
  Add difficulty levels (Easy, Medium, Hard)
  Implement a timer for each round
  Enhance animations using Framer Motion
+ 
 # HNG 12 Internship Submission
 This project is my submission for Stage 1 of HNG 12 Internship.
 ✅ Hosted on Vercel/Netlify (link above)
