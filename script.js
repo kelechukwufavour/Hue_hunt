@@ -17,6 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
     function startGame() {
         welcomeScreen.style.display = "none";
         gameContainer.style.display = "block";
+        score = 0;
+        scoreDisplay.textContent = `Score: ${score}`;
         startNewRound();
     }
 
@@ -39,24 +41,41 @@ document.addEventListener("DOMContentLoaded", () => {
             button.onclick = () => checkColor(color);
             colorOptions.appendChild(button);
         });
+
+        // Hide reset button until game ends
+        resetButton.style.display = "none";
     }
 
     // Function to check selected color
     function checkColor(color) {
         if (color === targetColor) {
-            message.textContent = "✅ Correct!";
             score++;
             scoreDisplay.textContent = `Score: ${score}`;
-            scoreDisplay.setAttribute("data-testid", "score");
-            setTimeout(startNewRound, 1000);
+            showPopup("✅ Correct!", true);
         } else {
-            message.textContent = "❌ Wrong! Try again.";
+            showPopup("❌ Oops! Try again.", false);
         }
-        message.setAttribute("data-testid", "gameStatus");
+    }
+
+    // Function to show a pop-up message
+    function showPopup(text, isCorrect) {
+        const popup = document.createElement("div");
+        popup.classList.add("popup");
+        popup.textContent = text;
+        document.body.appendChild(popup);
+
+        setTimeout(() => {
+            popup.remove();
+            if (isCorrect) {
+                resetButton.style.display = "block"; // Show "New Game" button
+            } else {
+                startGame(); // Restart game immediately on wrong choice
+            }
+        }, 1500);
     }
 
     // Reset the game
-    resetButton.addEventListener("click", startNewRound);
+    resetButton.addEventListener("click", startGame);
     resetButton.setAttribute("data-testid", "newGameButton");
 
     // Start game when button is clicked

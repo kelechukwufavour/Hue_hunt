@@ -114,14 +114,43 @@ select {
     transform: scale(1.1);
 }
 
-#reset-btn {
-    margin-top: 15px;
-    background-color: #de61c3;
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
     color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 1000;
+    animation: fadeOut 1.5s ease-in-out;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+#reset-btn {
+    margin-top: 20px;
+    background-color: #ca56ee;
+    color: white;
+    padding: 10px 20px;  /* Increased padding */
+    font-size: 1.2rem;   /* Bigger font size */
+    font-weight: bold;   /* Make text bolder */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
 #reset-btn:hover {
     background-color: #8f31a9;
+    transform: scale(1.1); /* Slight zoom effect */
 }
 
 /* Responsive Design */
