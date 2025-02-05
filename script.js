@@ -34,8 +34,8 @@ function startNewRound() {
     colors = difficultyLevels[levelSelect.value];
     targetColor = colors[Math.floor(Math.random() * colors.length)];
 
-    // Reset UI
-    targetBox.style.backgroundColor = "transparent";
+    // Show target color
+    targetBox.style.backgroundColor = targetColor;
     message.textContent = "Guess the correct color!";
     colorOptions.innerHTML = "";
 
@@ -48,6 +48,7 @@ function startNewRound() {
         colorOptions.appendChild(button);
     });
 }
+
 
 // Check the guessed color
 function checkColor(color) {
