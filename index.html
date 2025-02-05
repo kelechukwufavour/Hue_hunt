@@ -16,29 +16,21 @@
         <button class="start-btn" id="start-btn">Begin</button>
     </div>
 
+    <!-- Game Screen (Initially Hidden) -->
     <div class="game-container" id="game-container">
         <h1>Hue Hunt - Guess the Color</h1>
 
-        <select id="level">
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
-        </select>
-        <p id="timer">Time Left: 10s</p>
-        
+        <!-- Target Color Box -->
+        <div id="target-box"></div>
+        <p id="message">Guess the correct color!</p>
 
-    <!-- Target Color Box (Hidden Initially) -->
-    <div id="target-box"></div>
-    <p id="message">Guess the correct color!</p>
+        <!-- Color Options -->
+        <div id="colorOptions" class="color-grid"></div>
 
-     <!-- Color Options -->
-     <div id="colorOptions" class="color-grid"></div>
-
-     <p id="score">Score: 0</p>
-        <button id="reset-btn" onclick="resetGame()">New Game</button>
+        <p id="score">Score: 0</p>
+        <button id="reset-btn">New Game</button>
     </div>
 
-        
 <script src="script.js" defer></script>
 </body>
 </html>
