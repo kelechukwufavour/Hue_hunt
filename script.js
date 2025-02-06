@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const colorOptions = document.getElementById("colorOptions");
     const resetButton = document.getElementById("reset-btn");
 
-    let colors = ["red", "blue", "green", "yellow", "purple", "pink"];
+    const colors = ["red", "blue", "green", "yellow", "purple", "pink"];
     let targetColor = "";
     let score = 0;
 
@@ -42,40 +42,24 @@ document.addEventListener("DOMContentLoaded", () => {
             colorOptions.appendChild(button);
         });
 
-        // Hide reset button until game ends
-        resetButton.style.display = "none";
+        resetButton.style.display = "none"; // Hide reset button until needed
     }
 
-      // Function to check selected color
-function checkColor(color) {
-    if (color === targetColor) {
-        score++;
-        scoreDisplay.textContent = `Score: ${score}`;
-        showPopup("✅ Correct!", true);
-    } else {
-        showPopup("❌ Oops! Try again.", false);
-    }
+    // Function to check selected color
+    function checkColor(color) {
+        if (color === targetColor) {
+            score++;
+            scoreDisplay.textContent = `Score: ${score}`;
+            message.textContent = "✅ Correct!";
+            message.setAttribute("data-testid", "gameStatus");
 
-    // Change target color immediately after selection
-    targetColor = colors[Math.floor(Math.random() * colors.length)];
-    targetBox.style.backgroundColor = targetColor;
-}
-
-    // Function to show a pop-up message
-    function showPopup(text, isCorrect) {
-        const popup = document.createElement("div");
-        popup.classList.add("popup");
-        popup.textContent = text;
-        document.body.appendChild(popup);
-
-        setTimeout(() => {
-            popup.remove();
-            if (isCorrect) {
-                resetButton.style.display = "block"; // Show "New Game" button
-            } else {
-                startGame(); // Restart game immediately on wrong choice
-            }
-        }, 1500);
+            setTimeout(startNewRound, 1000); // Wait 1 sec before changing color
+        } else {
+            message.textContent = "❌ Oops! Try again.";
+            message.setAttribute("data-testid", "gameStatus");
+        }
+        
+        resetButton.style.display = "block"; // Show reset button after any guess
     }
 
     // Reset the game
