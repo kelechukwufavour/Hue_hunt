@@ -46,16 +46,20 @@ document.addEventListener("DOMContentLoaded", () => {
         resetButton.style.display = "none";
     }
 
-    // Function to check selected color
-    function checkColor(color) {
-        if (color === targetColor) {
-            score++;
-            scoreDisplay.textContent = `Score: ${score}`;
-            showPopup("✅ Correct!", true);
-        } else {
-            showPopup("❌ Oops! Try again.", false);
-        }
+      // Function to check selected color
+function checkColor(color) {
+    if (color === targetColor) {
+        score++;
+        scoreDisplay.textContent = `Score: ${score}`;
+        showPopup("✅ Correct!", true);
+    } else {
+        showPopup("❌ Oops! Try again.", false);
     }
+
+    // Change target color immediately after selection
+    targetColor = colors[Math.floor(Math.random() * colors.length)];
+    targetBox.style.backgroundColor = targetColor;
+}
 
     // Function to show a pop-up message
     function showPopup(text, isCorrect) {
