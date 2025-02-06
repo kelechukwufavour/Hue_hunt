@@ -116,11 +116,15 @@ select {
     transition: transform 0.2s ease-in-out;
 }
 
+.color-grid {
+        grid-template-columns: repeat(3, 1fr);
+        margin: auto;
+        max-width: 250px;
+        gap: 5px;
 .color-button:hover {
-    transform: scale(1.1);
+   transform: scale(1.1);
 }
-xs
-
+}
 #reset-btn {
     margin-top: 20px;
     background-color: #ca56ee;
@@ -145,8 +149,5 @@ xs
         grid-template-columns: repeat(3, 1fr);
     }
 }
-    .color-button {
-        width: 40px;
-        height: 40px;
-    }
+
 
