@@ -9,6 +9,18 @@ body {
     text-align: center;
     color: white;
 }
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.logo {
+    width: 50px;
+    margin-bottom: 15px;
+    height: auto;
+    cursor: pointer; /* Makes it clear it's clickable */
+    transition: transform 0.2s ease-in-out;
+}
 
 /* Welcome screen styles */
 .welcome-screen {

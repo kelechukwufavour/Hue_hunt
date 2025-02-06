@@ -8,29 +8,34 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="container">
+        <!-- Welcome Screen -->
+        <div class="welcome-screen" id="welcome-screen">
+            <a href="index.html">
+                <img src="Assets/logo.png" alt="Hue Hunt Logo" class="logo">
+            </a>
+            <h1>Welcome to Hue Hunt! 🎨</h1>
+            <p>Test your color recognition skills in this exciting guessing game. Click below to begin!</p>
+            <button class="start-btn" id="start-btn">Begin</button>
+        </div>
+
+        <!-- Game Screen (Initially Hidden) -->
+        <div class="game-container" id="game-container">
+            <img src="Assets/logo.png" alt="Hue Hunt Logo" class="logo">
+            <h1>Hue Hunt - Guess the Color</h1>
+
+            <!-- Target Color Box -->
+            <div id="target-box"></div>
+            <p id="message">Guess the correct color!</p>
+
+            <!-- Color Options -->
+            <div id="colorOptions" class="color-grid"></div>
+
+            <p id="score">Score: 0</p>
+            <button id="reset-btn">New Game</button>
+        </div>
+    </div>
     
-    <!-- Welcome Screen -->
-    <div class="welcome-screen" id="welcome-screen">
-        <h1>Welcome to Hue Hunt! 🎨</h1>
-        <p>Test your color recognition skills in this exciting guessing game. Click below to begin!</p>
-        <button class="start-btn" id="start-btn">Begin</button>
-    </div>
-
-    <!-- Game Screen (Initially Hidden) -->
-    <div class="game-container" id="game-container">
-        <h1>Hue Hunt - Guess the Color</h1>
-
-        <!-- Target Color Box -->
-        <div id="target-box"></div>
-        <p id="message">Guess the correct color!</p>
-
-        <!-- Color Options -->
-        <div id="colorOptions" class="color-grid"></div>
-
-        <p id="score">Score: 0</p>
-        <button id="reset-btn">New Game</button>
-    </div>
-
-<script src="script.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
