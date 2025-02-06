@@ -18,8 +18,6 @@ body {
     width: 50px;
     margin-bottom: 15px;
     height: auto;
-    cursor: pointer; /* Makes it clear it's clickable */
-    transition: transform 0.2s ease-in-out;
 }
 
 /* Welcome screen styles */
@@ -142,7 +140,7 @@ xs
 }
 
 /* Responsive Design */
-@media (max-width: 400px) {
+@media (max-width: 500px) {
     .color-grid {
         grid-template-columns: repeat(1, 1fr);
     }
